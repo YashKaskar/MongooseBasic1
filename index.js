@@ -15,5 +15,8 @@ const movieSchema = new mongoose.Schema({
     title: String, year: Number, score: Number, rating: String
 });
 
+
+//Inserting Single Movie 
 const Movie = mongoose.model('Movie', movieSchema);
 const movieName = new Movie({ title: 'Your Name', year: 2016, score: 8.4, rating: 'R' });
+
