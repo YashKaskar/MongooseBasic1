@@ -16,10 +16,25 @@ const productSchema = new mongoose.Schema({
         required: true
     },
     price: {
-        type: Number
+        type: Number,
+        required: true
+    },
+    onsale: {   
+        type: Boolean,
+        default: false
     }
         
 })
 
 const Product = mongoose.model('Product', productSchema);
-
+const bike = new Product({  
+    name: 'Mountain Bike',
+    price : 599
+})
+bike.save()
+    .then(data => {
+        console.log('It Worked');
+}).catch(err => {
+    console.log('Something is Wrong')
+    console.log(err)
+})
