@@ -10,3 +10,16 @@ mongoose.connect('mongodb://localhost:27017/shopApps')
     console.log(err)
 })
 
+const productSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true
+    },
+    price: {
+        type: Number
+    }
+        
+})
+
+const Product = mongoose.model('Product', productSchema);
+
